@@ -1,0 +1,1 @@
+CREATE TABLE roles (id INT PRIMARY KEY, nombre VARCHAR(50));
