@@ -2,7 +2,9 @@ import {
     Column, 
     Entity, 
     PrimaryGeneratedColumn, 
+    ManyToOne, 
 } from 'typeorm';
+import { Role } from '../../roles/entities/role.entity';
 
 @Entity()
 export class User {
@@ -21,9 +23,6 @@ export class User {
     @Column({ type: 'varchar', length: 255 })
     docNumber;
 
-    @Column({ type: 'varchar', length: 55 })
-    miTest;
-
-    @Column({ type: 'varchar', length: 255 })
-    miTest2;
+     @ManyToOne(() => Role, (role) => role.users)
+    role: Role; 
 }
